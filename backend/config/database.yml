@@ -1,0 +1,16 @@
+global: &global
+  adapter: postgresql
+  encoding: unicode
+  min_messages: warning
+  host: localhost
+
+development:
+  database: mc_normal_mode_development
+  <<: *global
+
+test: &test
+  database: mc_normal_mode_test
+  <<: *global
+
+cucumber:
+  <<: *test
