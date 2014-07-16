@@ -13,7 +13,11 @@ export default Ember.Controller.extend({
         this.setProperties({title: null, body: null});
       }.bind(this);
 
-      article.save().then(successHandler);
+      var errorHandler = function(err){
+        console.log(err);
+      };
+
+      article.save().then(successHandler).catch(errorHandler);
     }
   }
 });
