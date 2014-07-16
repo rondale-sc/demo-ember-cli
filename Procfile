@@ -1,1 +1,1 @@
-web: sh -c 'cd frontend && rails server'
+web: sh -c 'cd backend && rackup'

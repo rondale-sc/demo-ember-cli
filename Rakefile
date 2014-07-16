@@ -27,3 +27,22 @@ task :default do
     sleep 1
   end
 end
+
+task :deploy do
+  sh 'git checkout production'
+  sh 'git merge master -m "Merging master for deployment"'
+
+  sh 'rm -rf backend/public/assets'
+  sh 'rm backend/public/index.html'
+
+  sh 'cd frontend && ember build --env production --output-path ../backend/public/ && cd ..'
+
+  unless `git status backend/public --porcelain` == ""
+    sh 'git add -A backend/public'
+    sh 'git commit -m "Asset compilation for deployment"'
+  end
+
+  sh 'git subtree push -P backend heroku master'
+
+  sh 'git checkout -'
+end

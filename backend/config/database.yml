@@ -12,5 +12,8 @@ test: &test
   database: mc_normal_mode_test
   <<: *global
 
+production:
+  database: mc_normal_mode
+
 cucumber:
   <<: *test
