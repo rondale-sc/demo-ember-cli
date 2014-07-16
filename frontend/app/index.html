@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>McNormalMode</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{BASE_TAG}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/mc-normal-mode.css">
+  </head>
+  <body>
+    <script>
+      window.McNormalModeENV = {{ENV}};
+      window.EmberENV = window.McNormalModeENV.EmberENV;
+    </script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/mc-normal-mode.js"></script>
+    <script>
+      window.McNormalMode = require('mc-normal-mode/app')['default'].create(McNormalModeENV.APP);
+    </script>
+  </body>
+</html>

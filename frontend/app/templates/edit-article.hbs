@@ -1,0 +1,14 @@
+<h1> Edit Article </h1>
+
+<form>
+  <div>
+    <label>Title</label><br/>
+    {{ input type=text value=title }}
+  </div>
+  <div>
+    <label>Body</label><br/>
+    {{ textarea value=body }}
+  </div>
+
+  <button {{ action submit }}>Update Article!</button>
+</form>

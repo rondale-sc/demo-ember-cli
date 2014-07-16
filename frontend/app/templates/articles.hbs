@@ -1,0 +1,13 @@
+<h1>McNormal Mode's Articles</h1>
+
+<ul>
+  {{#each this}}
+    <li>
+      {{ link-to title 'article' this}} | 
+      <a style='cursor:pointer' {{ action deleteArticle this }}>delete</a> |
+      {{ link-to 'edit' 'edit-article' this }}
+    </li>
+  {{/each}}
+</ul>
+
+{{ link-to 'new article' 'new-article'}}
