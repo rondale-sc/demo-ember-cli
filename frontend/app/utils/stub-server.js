@@ -14,7 +14,7 @@ export default function(){
   });
 
   this.post('/api/articles', function() {
-    return [200, {"Content-Type": "application/json"}, {article: articles[0]}];
+    return [200, {"Content-Type": "application/json"}, JSON.stringify({article: articles[0]})];
   });
 
   this.delete('/api/articles', function(){

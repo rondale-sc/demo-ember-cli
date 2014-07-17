@@ -66,10 +66,10 @@ test('creating new article', function(){
     click('a:contains("new article")');
   }).then(function() {
     fillIn('textarea', 'blogger');
-    fillIn('input', 'Lawnmower man');
+    fillIn('input', 'Trip to outer space!');
     click('button');
   }).then(function(){
     equal(currentURL(), '/');
-    ok(/Lawnmower man/.test(find('li').text()));
+    ok(/Trip to outer space!/.test(find('li').text()));
   });
 });

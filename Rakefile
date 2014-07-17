@@ -42,8 +42,6 @@ task :deploy do
     sh 'git commit -m "Asset compilation for deployment"'
   end
 
-  # sh 'git subtree push -P backend heroku master'
-
   sh 'git push heroku `git subtree split --prefix backend production`:master --force'
 
   sh 'git checkout -'
