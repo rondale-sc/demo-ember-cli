@@ -3,8 +3,8 @@
 <ul>
   {{#each this}}
     <li>
-      {{ link-to title 'article' this}} | 
-      <a style='cursor:pointer' {{ action deleteArticle this }}>delete</a> |
+      {{ link-to title 'article' this}} |
+      <a href='#' {{ action deleteArticle this }}>delete</a> |
       {{ link-to 'edit' 'edit-article' this }}
     </li>
   {{/each}}
