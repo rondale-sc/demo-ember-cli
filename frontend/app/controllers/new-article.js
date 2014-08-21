@@ -7,11 +7,12 @@ export default Ember.Controller.extend({
     submit: function() {
       var attrs = this.getProperties('title', 'body');
       var article = this.store.createRecord('article', attrs);
+      var routeContext = this;
 
       var successHandler = function(){
-        this.transitionTo('articles');
-        this.setProperties({title: null, body: null});
-      }.bind(this);
+        routeContext.transitionTo('articles');
+        routeContext.setProperties({title: null, body: null});
+      };
 
       var errorHandler = function(err){
         console.log(err);
